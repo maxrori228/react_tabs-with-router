@@ -10,8 +10,8 @@ interface Props {
 export const TabsRouter: React.FC<Props> = ({ tabs }) => {
   return (
     <Routes>
-      <Route path="/" element={<h1 className="title">Home Page</h1>} />
-      <Route path="/" element={<Navigate to="/" replace />} />
+      <Route path="/" element={<h1 className="title">Home page</h1>} />
+      <Route path="/home" element={<Navigate to="/" replace />} />
       <Route path="/tabs">
         <Route index element={<TabsPage tabs={tabs} />} />
         <Route path=":tabId" element={<TabsPage tabs={tabs} />} />
