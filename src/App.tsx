@@ -1,9 +1,8 @@
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
-import { Navigation } from './components/navigation';
+import { Navigation } from './components/Navigation';
 import { TabsRouter } from './components/TabsRouter';
-import { HashRouter } from 'react-router-dom';
 
 const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
@@ -12,7 +11,7 @@ const tabs = [
 ];
 
 export const App = () => (
-  <HashRouter>
+  <>
     {/* Also requires <html class="has-navbar-fixed-top"> */}
     <Navigation />
 
@@ -21,5 +20,5 @@ export const App = () => (
         <TabsRouter tabs={tabs} />
       </div>
     </div>
-  </HashRouter>
+  </>
 );

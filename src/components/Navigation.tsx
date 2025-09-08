@@ -1,7 +1,9 @@
+import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
-import { NavLink } from 'react-router-dom';
 
 export const Navigation = () => {
+  const { pathname } = useLocation();
+
   return (
     <nav
       className="navbar is-light is-fixed-top is-mobile has-shadow"
@@ -9,22 +11,23 @@ export const Navigation = () => {
     >
       <div className="container">
         <div className="navbar-brand">
-          <NavLink
+          <Link
             to="/"
-            className={({ isActive }) =>
-              classNames('navbar-item', { 'is-active': isActive })
-            }
+            className={classNames('navbar-item', {
+              'is-active': pathname === '/',
+            })}
           >
             Home
-          </NavLink>
-          <NavLink
+          </Link>
+
+          <Link
             to="/tabs"
-            className={({ isActive }) =>
-              classNames('navbar-item', { 'is-active': isActive })
-            }
+            className={classNames('navbar-item', {
+              'is-active': pathname.startsWith('/tabs'),
+            })}
           >
             Tabs
-          </NavLink>
+          </Link>
         </div>
       </div>
     </nav>
